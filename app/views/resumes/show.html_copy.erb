@@ -1,0 +1,30 @@
+
+
+<%= button_to '点击我更新成组件1', second_page_path(id: @resume.id, component_serial: 1), method: :post %>
+<%= button_to '点击我更新成组件3', second_page_path(id: @resume.id, component_serial: 3), method: :post %>
+
+
+<div id="content">
+
+
+  <% if @resume.component_serial == 1 %>
+  <p>我是第一版組件</p>
+  <turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+  </turbo-frame>
+  <% elsif @resume.component_serial == 2 %>
+  <p>我是第二版組件</p>
+  <turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+  </turbo-frame>
+  <% elsif @resume.component_serial == 3 %>
+  <turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+  </turbo-frame>
+  <% else %>
+    <!-- 处理其他情况 -->
+  <% end %>
+</div>

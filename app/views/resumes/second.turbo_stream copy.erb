@@ -1,0 +1,11 @@
+
+
+<%= turbo_stream.update "content" do %>
+  <% if @component.component_serial == 1 %>
+  <p>我是第一版組件</p>
+  <% elsif @component.component_serial == 3 %>
+  <p>我是第三版組件</p>
+  <% else %>
+    <!-- 处理其他情况 -->
+  <% end %>
+<% end %>

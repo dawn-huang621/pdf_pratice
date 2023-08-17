@@ -1,0 +1,21 @@
+
+.skill{
+    box-sizing: border-box;
+    margin-right: -64px;
+    margin-left: -64px;
+}
+.top-96px{
+    top: 96px;
+}
+/* .h-screen-96px{
+    height: calc(100% - 96px);
+} */
+.h-244{
+    height: 244px;
+}
+.custom-width-250{
+    width: 150px;
+}
+.save-btn {
+    @apply  flex mr-2 px-4 py-1 w-fit rounded-full block text-white  bg-amber-500 hover:bg-amber-800;
+}

@@ -1,0 +1,21 @@
+
+
+<%= turbo_stream.update "content" do %>
+  <% if @component_serial == '1' %>
+  <p>我是第一版組件</p>
+  
+  <turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+  </turbo-frame>
+  <% elsif @component_serial == '3' %>
+  <p>我是第三版組件</p>
+  
+  <turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+  </turbo-frame>
+  <% else %>
+    <!-- 处理其他情况 -->
+  <% end %>
+<% end %>

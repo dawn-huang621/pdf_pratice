@@ -1,0 +1,27 @@
+<%= link_to '組件一', edit_resume_path, data: { turbo_frame: "1" } %>
+<%= link_to "組件一", search_path(component_serial: 1) %>
+
+    
+<div class="component">
+    <% if @component.component_serial == 1 %>
+      <%= render partial: 'components/component_1', locals: { component: @component } %>
+    <% elsif @component.component_serial == 2 %>
+      <%= render partial: 'components/component_2', locals: { component: @component } %>
+    <% else %>
+      <!-- 处理其他情况 -->
+    <% end %>
+</div>
+
+
+@component = Component.find_by(component_serial: @component_serial)
+
+
+
+<turbo-frame id="<%= dom_id @resume %>">
+    <%= link_to '我是編輯按鈕', edit_resume_path(@resume), data: { turbo_frame: "1" }  %>
+    <%= @resume.basic_info %>
+</turbo-frame>
+
+<p>
+    <%= @resume.block %>
+  </p>

@@ -1,0 +1,7 @@
+
+<%= turbo_frame_tag dom_id(@resume) do %>
+<%= form_with(model: @resume) do |f| %>
+    <%= f.text_area :basic_info, class: 'h-100' %>
+    <%= f.submit '儲存更新'%>
+  <% end %>
+<% end %>
